@@ -45,20 +45,7 @@ mongoose.connection
     console.log(`Connection error: ${err.message}`);
   });
 
-//     mongoose
-//   // .connect("mongodb+srv://test_run:UOzBFTkKs2xxqetU@cluster0.y5jlmcy.mongodb.net/", {
-//   .connect("mongodb://127.0.0.1:27017/mobile", {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-//   })
-//   .then(() => {
-//     console.log("Connected to MongoDB");
-//   })
-//   .catch((err) => {
-//     console.log("Error connecting to MongoDB", err);
-//   });
 
-// Link path & connect to views directory
 // app.set('view engine','pug')
 app.set("views", path.join(__dirname, "views"));
 
