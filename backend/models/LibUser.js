@@ -17,6 +17,7 @@ const libUserSchema = new mongoose.Schema({
     idNumber: {
       type: Number,
     },
+    address: String,
     
   });
     

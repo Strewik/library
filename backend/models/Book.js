@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 // Define Schema Model
 const shopSchema = new mongoose.Schema({
     // Product Schema
-    booktName: {
+    title: {
       type: String,
     },
     image: {
