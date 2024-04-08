@@ -1,0 +1,42 @@
+.form-container {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.add-user-form {
+  padding: 20px;
+}
+
+.add-user-form h2 {
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.add-user-button {
+  background: linear-gradient(to right, #4ca1af, #c4e0e5);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.add-user-button:hover {
+  background: linear-gradient(to right, #c4e0e5, #4ca1af);
+}
