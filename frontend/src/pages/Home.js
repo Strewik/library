@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 
-import './App.css';
-import Dashboard from './Dashboard';
-import Books from './Books';
-import Users from './Users';
-import IssueReturn from './IssueReturn';
-function App() {
+import '../css/home.css';
+import Dashboard from '../components/Dashboard.js';
+import BookList from '../components/BookList';
+import Users from '../components/Users';
+import IssueReturn from '../components/IssueReturn';
+function Home() {
   const [selectedMenuItem, setSelectedMenuItem] = useState("Dashboard");
 
   const handleMenuItemClick = (menuItem) => {
@@ -13,7 +13,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="Home">
       <aside className="sidebar">
         <nav>
           <ul>
@@ -27,12 +27,12 @@ function App() {
       <main className="main-content">
   {selectedMenuItem === "Dashboard" && <Dashboard />}
   {selectedMenuItem === "Users" && <Users />}
-  {selectedMenuItem === "Books" && <Books />}
+  {selectedMenuItem === "Books" && <BookList />}
   {selectedMenuItem === "Issue/Return" && <IssueReturn />}
 </main>
     </div>
   );
 }
 
-export default App;
+export default Home;
 

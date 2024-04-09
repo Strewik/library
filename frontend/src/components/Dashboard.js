@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/Dashboard";
+import "../css/Dashboard.css";
 // import Button from "./button";
 function Dashboard() {
   return (
@@ -24,7 +24,6 @@ function Dashboard() {
           <h3 className="card-title">Number of Books (Genre)</h3>
           <p className="card-value">3000</p>
           {/* <Button page="/another-page" buttonName="Learn More" /> */}
-
         </div>
         <div className="card">
           <h3 className="card-title">Popular genres</h3>

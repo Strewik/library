@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Users.css'; 
+import '../css/Users.css'; 
 
 function Users() {
   // Sample data array

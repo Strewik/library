@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import EditBookModal from './EditBookModal';
 import DeleteBookModal from './DeleteBookModal';
-import './BookList.css'; 
+import '../css/BookList.css'; 
 
 function BookList() {
   

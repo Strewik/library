@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import '../css/landing.css'; 
 
 function App() {
@@ -15,6 +17,7 @@ function App() {
             className="library-image"
           />
           <button className="get-started-button">Get Started</button>
+          <Link to="/home" className="get-started-button">Go to Other Page</Link>
         </div>
       </div>
     </div>
