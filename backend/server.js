@@ -1,13 +1,10 @@
-// To test if the node is working:
-// console.log('Hello, World! Node is working...');
-
-// Require dependencies into project using require keyword
 const path = require("path");
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const passportLocalMongoose = require("passport-local-mongoose");
 require("dotenv").config();
+
 const expressSession = require("express-session")({
   secret: "secret",
   resave: false,
@@ -17,8 +14,7 @@ const passport = require("passport");
 // const multer = require('multer');
 
 // instantiate & assign/import routes
-// const pageRoutes = require('./routes/uFarmRoutes');
-
+const bookRoutes = require("./routes/bookRoutes");
 // const customerRoutes = require('./routes/customerRoutes');
 // const loginRoutes = require('./routes/signupLoginRoutes');
 // const agriOfficerDash = require('./routes/aoRoutes');
@@ -27,24 +23,24 @@ const passport = require("passport");
 
 // Importing model schema
 // const UserReg = require('./models/UserReg');
-// const Shop = require('../models/Shop')
-
+const Book = require("./models/bookModel");
 // Create an express application
 const app = express();
 
 // Connect to MongoDB datatbase using Mongoose
 // mongoose.connect(process.env.librarydb, {
-mongoose.connect("mongodb://127.0.0.1:27017/librarydb");
+// mongoose.connect("mongodb://127.0.0.1:27017/librarydb");
+mongoose.connect(process.env.DatabaseURL);
 
 // Test if the mongoose connection is open or not
 mongoose.connection
   .on("open", () => {
     console.log("Mongoose connection open");
+    app.listen(3000, () => console.log("listening on port 3000"));
   })
   .on("error", (err) => {
     console.log(`Connection error: ${err.message}`);
   });
-
 
 // app.set('view engine','pug')
 app.set("views", path.join(__dirname, "views"));
@@ -56,7 +52,8 @@ app.set("views", path.join(__dirname, "views"));
 // });
 
 // Body Parser Middleware settings
-app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
 
 // Express-Session & Passport Config Settings
 app.use(expressSession);
@@ -85,7 +82,7 @@ app.use(express.static(path.join(__dirname, "public")));
 // Connect to main Routing where all Get & Post Methods are
 // app.use('/', pageRoutes);
 
-// app.use('/', customerRoutes);
+app.use("/", bookRoutes);
 // app.use('/', loginRoutes);
 // app.use('/', agriOfficerDash);
 // app.use('/', farmerOneDash);
@@ -108,6 +105,3 @@ app.use(express.static(path.join(__dirname, "public")));
 app.get("*", (req, res) => {
   res.send("error page");
 });
-
-// Create a server that listens on port 3000 for requests
-app.listen(3000, () => console.log("listening on port 3000"));
